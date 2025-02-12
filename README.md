@@ -68,7 +68,8 @@ REM UPDATE a room booking (full update; replace <room_id> with the actual ID)
 curl -X PUT -H "Content-Type: application/json" -d "{\"booked_by\": \"Jane Doe\", \"booking_start\": \"2025-02-11T11:00:00Z\", \"duration_minutes\": 90}" http://127.0.0.1:8000/room_booking/<room_id>/
 
 REM DELETE a room booking (replace <room_id> with the actual ID)
-curl -X DELETE http://127.0.0.1:8000/room_booking/<room_id>/```
+curl -X DELETE http://127.0.0.1:8000/room_booking/<room_id>/
+```
 
 ### Using CMD
 
@@ -85,13 +86,15 @@ Invoke-RestMethod -Method PUT -Uri "http://127.0.0.1:8000/room_booking/<room_id>
     -ContentType "application/json" -Body '{"booked_by": "Jane Doe", "booking_start": "2025-02-11T11:00:00Z", "duration_minutes": 90}'
 
 # DELETE a room booking (replace <room_id> with the actual ID)
-Invoke-RestMethod -Method DELETE -Uri "http://127.0.0.1:8000/room_booking/<room_id>/"```
+Invoke-RestMethod -Method DELETE -Uri "http://127.0.0.1:8000/room_booking/<room_id>/"
+```
 
 ## API Testing
 
 Unit tests for the API are located in tests.py and can be run with the following command inside the Docker container:
 
 ```batch
-docker-compose exec web python manage.py test```
+docker-compose exec web python manage.py test
+```
 
 his will execute the CRUD tests and verify that the API behaves as expected.
